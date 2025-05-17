@@ -1,3 +1,5 @@
+#!/bin/bash
+
 case $1 in
   --date | -d)
     echo "Dzisiejsza data: $(date)"
@@ -17,7 +19,7 @@ case $1 in
     done
     echo "$count folderów error zostało utworzonych."
     ;;
-  --init)
+  --init | -i)
     git clone https://github.com/<TwojeKonto>/ZadanieSkrypt.git
     export PATH=$PATH:$(pwd)/ZadanieSkrypt
     echo "Repozytorium zostało sklonowane i PATH zaktualizowany."
@@ -27,7 +29,7 @@ case $1 in
     echo "  --date, -d: Wyświetla dzisiejszą datę"
     echo "  --logs, -l <n>: Tworzy n plików logx.txt (domyślnie 100)"
     echo "  --error, -e <n>: Tworzy n folderów errorx z plikami errorx.txt (domyślnie 100)"
-    echo "  --init: Klonuje repozytorium i ustawia PATH"
+    echo "  --init, -i: Klonuje repozytorium i ustawia PATH"
     echo "  --help, -h: Wyświetla tę wiadomość"
     ;;
   *)
